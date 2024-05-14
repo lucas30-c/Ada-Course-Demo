@@ -14,7 +14,8 @@ package SimpleStack with SPARK_Mode is
    
    procedure Push(S : in out SimpleStack; I : in Item)
      with Pre => Size(S) /= Max_Size,
-     Post => Size(S) = Size(S'Old) + 1;
+     Post => Size(S) = Size(S'Old) + 1 and 
+     Storage(S, Size(S)) = I; -- The last item of the array is I
    
    procedure Pop(S : in out SimpleStack; I : out Item)
      with Pre => Size(S) /= 0,
