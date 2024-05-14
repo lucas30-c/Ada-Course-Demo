@@ -23,6 +23,6 @@ begin
    
    Ada.Text_IO.New_Line;
    
-   Ada.Integer_Text_IO.Put(SS.Size(S));
+   Ada.Integer_Text_IO.Put(SS.Size(S)); -- print 0
    
 end Main;
