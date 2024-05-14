@@ -1,0 +1,23 @@
+# Ignore executable files
+*.o
+*.ali
+*.exe
+hello
+main
+
+# Ignore input/output and temporary files
+*.stdout
+*.stderr
+*.bexch
+*.cache
+
+# Ignore GNAT and GPS specific files
+default.gpr
+gnatinspect.db
+gnatinspect.db-shm
+gnatinspect.db-wal
+gpsauto.cgpr
+
+# Ignore backup files
+*~
+.#*
