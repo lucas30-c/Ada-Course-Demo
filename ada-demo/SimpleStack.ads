@@ -10,17 +10,26 @@ package SimpleStack with SPARK_Mode is
    type SimpleStack is private;
    
    procedure Init(S : out SimpleStack)
-   with Post => Size(S) = 0;
+     with Post => Size(S) = 0;
+   
    procedure Push(S : in out SimpleStack; I : in Item)
      with Pre => Size(S) /= Max_Size,
-          Post => Size(S) = Size(S'Old) + 1;
+     Post => Size(S) = Size(S'Old) + 1;
+   
    procedure Pop(S : in out SimpleStack; I : out Item)
      with Pre => Size(S) /= 0,
           Post => Size(S) = Size(S'Old) - 1;
-   
+
    -- Very Important!! You have to write a getter(function in Ada) to make the size(private) accessible. 
    -- It is very common to write these getters in the spec.
    function Size(S : in SimpleStack) return Integer;
+   
+   -- A dumb idea
+   function Storage(S : in SimpleStack; Pos : in Integer) return Item
+     with Pre => (Pos in 1..Max_Size);
+   -- How could this Storage function cause a runtime error?
+   -- Pos out of range
+   
 
 -- Private Space     
 private 
@@ -34,5 +43,8 @@ private
    -- Important
    function Size(S : in SimpleStack) return Integer is
      (S.size);
+   
+   function Storage(S : in SimpleStack) return Integer is 
+      (S.storage(Pos))
 
 end SimpleStack;
