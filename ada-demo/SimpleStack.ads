@@ -21,7 +21,9 @@ package SimpleStack with SPARK_Mode is
    
    procedure Pop(S : in out SimpleStack; I : out Item)
      with Pre => Size(S) /= 0,
-          Post => Size(S) = Size(S'Old) - 1;
+     Post => Size(S) = Size(S'Old) - 1 and
+       I = Storage(S'Old, Size(S'Old)) and -- This way will overwrite
+       (for all J in 1..Size(S) => Storage(S, J) = Storage(S'Old, J));
 
    -- Very Important!! You have to write a getter(function in Ada) to make the size(private) accessible. 
    -- It is very common to write these getters in the spec.

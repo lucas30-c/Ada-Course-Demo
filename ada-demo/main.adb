@@ -16,9 +16,12 @@ begin
    SS.Push(S, 6);
    
    SS.Pop(S, I); -- I holds 6
-   SS.Pop(S, J); -- J holds 5
-   
    pragma Assert(I = 6);
+   
+   SS.Pop(S, J); -- J holds 5
+   pragma Assert(J = 5);
+   
+   
    Ada.Integer_Text_IO.Put(I - J); -- print 1
    
    Ada.Text_IO.New_Line;
