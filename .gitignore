@@ -39,3 +39,6 @@ Workshop8/obj/gnatprove/divmod/why3shapes
 Workshop8/obj/gnatprove/main/why3shapes
 ada-ghost-code/obj/gnatprove/integer_operations/why3shapes
 Workshop8/obj/main
+Workshop8-solution/default.gpr
+Workshop8-solution/obj/gnatprove/divmod/why3shapes
+Workshop8-solution/obj/gnatprove/main/why3shapes
