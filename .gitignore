@@ -33,3 +33,9 @@ ada-loop/obj/b__main.adb
 ada-loop/obj/b__main.ads
 ada-loop/obj/gnatprove/main/why3shapes
 ada-loop/obj/main
+Workshop8/obj/b__main.adb
+Workshop8/obj/b__main.ads
+Workshop8/obj/gnatprove/divmod/why3shapes
+Workshop8/obj/gnatprove/main/why3shapes
+ada-ghost-code/obj/gnatprove/integer_operations/why3shapes
+Workshop8/obj/main

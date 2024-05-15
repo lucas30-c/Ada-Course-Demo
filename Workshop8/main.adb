@@ -23,7 +23,7 @@ begin
       Put("R: "); Put(R); New_Line;
 
       -- assert that the result is correct
-      pragma Assert (X = K * N + R and R < N);
+      pragma Assert (X = K * N + R and R < N); -- Initailly this assert cannot be proved
 
       -- SPARK needs some help to conclude that X/N = K.
       -- We derive that final result step-by-step
