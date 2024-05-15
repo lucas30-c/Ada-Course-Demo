@@ -30,8 +30,9 @@ package SimpleStack with SPARK_Mode is
    function Size(S : in SimpleStack) return Integer;
    
    -- A dumb idea
-   function Storage(S : in SimpleStack; Pos : in Integer) return Item
-     with Pre => (Pos in 1..Max_Size);
+   function Storage(S : in SimpleStack; Pos : in Integer) return Item with
+     Ghost,
+     Pre => (Pos in 1..Max_Size);
      -- Ghost; -- Meaning you cannot call this in real code; You can only use this in specification
    -- How could this Storage function cause a runtime error?
    -- Pos out of range
